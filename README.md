@@ -1,2 +1,2 @@
 # ldjam-44
-Game created in a weekend for Ludum Dare 44 following the theme "TO BE INSERTED".
+Game created in a weekend for Ludum Dare 44 under the theme "Your Life is Currency".
