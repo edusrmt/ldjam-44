@@ -135,8 +135,9 @@ GameObject:
   - component: {fileID: 16621624}
   - component: {fileID: 16621623}
   - component: {fileID: 16621622}
+  - component: {fileID: 16621629}
   m_Layer: 9
-  m_Name: Slime (3)
+  m_Name: Blue Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,11 +155,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62e6ee3082c4284294e978e167db2ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myController: {fileID: 16621624}
-  playerController: {fileID: 1342562032}
   target: {fileID: 1956664442}
   moveSpeed: 40
   maxDistance: 0.1
+  fixLanding: 1
   updateRate: 2
   pathIsEnded: 0
   nextWaypointDistance: 1
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_JumpForce: 600
   m_MovementSmoothing: 0.05
-  m_AirControl: 0
+  m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 311
@@ -212,7 +212,18 @@ MonoBehaviour:
   m_FacingRight: 1
   OnLandEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 16621622}
+        m_MethodName: OnLanding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!50 &16621625
@@ -289,8 +300,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 349634882f236bd4aadca19e781ac21e, type: 3}
-  m_Color: {r: 0.38679248, g: 0.16602886, b: 0.36226317, a: 1}
+  m_Sprite: {fileID: 332046234177408410, guid: 3801b3d18b733b544ac86bb130911a83, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -308,13 +319,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16621621}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: -0.5, z: 0}
+  m_LocalPosition: {x: -4.5, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 385856605}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &16621629
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16621621}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3a90c144884466446b0ee4a0287ff7f6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &115312564
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +565,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430681505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5, y: -0.25, z: 0}
+  m_LocalPosition: {x: -3.5, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1342562037}
@@ -556,8 +586,9 @@ GameObject:
   - component: {fileID: 543595717}
   - component: {fileID: 543595716}
   - component: {fileID: 543595715}
+  - component: {fileID: 543595722}
   m_Layer: 9
-  m_Name: Slime (5)
+  m_Name: Yellow Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -575,11 +606,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62e6ee3082c4284294e978e167db2ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myController: {fileID: 543595717}
-  playerController: {fileID: 1342562032}
   target: {fileID: 1623236646}
   moveSpeed: 40
   maxDistance: 0.1
+  fixLanding: 1
   updateRate: 2
   pathIsEnded: 0
   nextWaypointDistance: 1
@@ -625,7 +655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_JumpForce: 600
   m_MovementSmoothing: 0.05
-  m_AirControl: 0
+  m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 311
@@ -633,7 +663,18 @@ MonoBehaviour:
   m_FacingRight: 1
   OnLandEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 543595715}
+        m_MethodName: OnLanding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!50 &543595718
@@ -710,8 +751,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 349634882f236bd4aadca19e781ac21e, type: 3}
-  m_Color: {r: 0.7830189, g: 0.32133323, b: 0.7263206, a: 1}
+  m_Sprite: {fileID: -5346023277746062881, guid: b0a3a527b5081f94fa95c14bd1b8d015,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -734,8 +776,27 @@ Transform:
   m_Children:
   - {fileID: 210738776}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &543595722
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543595714}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd1aa223df228d74d932ccd4c15bbe58, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &766504264
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,7 +821,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766504264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: -0.25, z: 0}
+  m_LocalPosition: {x: -1.5, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1342562037}
@@ -781,8 +842,9 @@ GameObject:
   - component: {fileID: 867374490}
   - component: {fileID: 867374489}
   - component: {fileID: 867374488}
+  - component: {fileID: 867374495}
   m_Layer: 9
-  m_Name: Slime (4)
+  m_Name: Green Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -800,11 +862,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62e6ee3082c4284294e978e167db2ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myController: {fileID: 867374490}
-  playerController: {fileID: 1342562032}
   target: {fileID: 766504265}
   moveSpeed: 40
   maxDistance: 0.1
+  fixLanding: 0
   updateRate: 2
   pathIsEnded: 0
   nextWaypointDistance: 1
@@ -850,7 +911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_JumpForce: 600
   m_MovementSmoothing: 0.05
-  m_AirControl: 0
+  m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 311
@@ -858,7 +919,18 @@ MonoBehaviour:
   m_FacingRight: 1
   OnLandEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 867374488}
+        m_MethodName: OnLanding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!50 &867374491
@@ -935,8 +1007,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 349634882f236bd4aadca19e781ac21e, type: 3}
-  m_Color: {r: 1, g: 0.3726415, b: 0.922956, a: 1}
+  m_Sprite: {fileID: -3378977117692422574, guid: cd354deec19d72b40a1183c9a68c8bff,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -959,8 +1032,27 @@ Transform:
   m_Children:
   - {fileID: 1289460613}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &867374495
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867374487}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 120ad806a8042c442ba1a3b7567d78b3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1090682632
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,8 +1068,9 @@ GameObject:
   - component: {fileID: 1090682635}
   - component: {fileID: 1090682634}
   - component: {fileID: 1090682633}
+  - component: {fileID: 1090682640}
   m_Layer: 9
-  m_Name: Slime (2)
+  m_Name: Red Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -995,11 +1088,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62e6ee3082c4284294e978e167db2ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myController: {fileID: 1090682635}
-  playerController: {fileID: 1342562032}
   target: {fileID: 430681506}
   moveSpeed: 40
   maxDistance: 0.1
+  fixLanding: 1
   updateRate: 2
   pathIsEnded: 0
   nextWaypointDistance: 1
@@ -1045,7 +1137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_JumpForce: 600
   m_MovementSmoothing: 0.05
-  m_AirControl: 0
+  m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 311
@@ -1053,7 +1145,18 @@ MonoBehaviour:
   m_FacingRight: 1
   OnLandEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1090682633}
+        m_MethodName: OnLanding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!50 &1090682636
@@ -1130,8 +1233,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 349634882f236bd4aadca19e781ac21e, type: 3}
-  m_Color: {r: 0.6037736, g: 0.27625492, b: 0.56738263, a: 1}
+  m_Sprite: {fileID: -6030333066402493403, guid: 5f55117852ac39245bdf4b62c4b52bd8,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1149,13 +1253,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090682632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: -0.5, z: 0}
+  m_LocalPosition: {x: -3.5, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 115312565}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1090682640
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090682632}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 738e95bc14e48a3408384e71b05d843a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1098282905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1411,7 +1534,7 @@ GameObject:
   - component: {fileID: 1342562038}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1740,7 +1863,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623236645}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: -0.25, z: 0}
+  m_LocalPosition: {x: -2.5, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1342562037}
@@ -1982,7 +2105,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956664441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.5, y: -0.25, z: 0}
+  m_LocalPosition: {x: -4.5, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1342562037}

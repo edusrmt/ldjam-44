@@ -5,11 +5,13 @@ using Pathfinding;
 [RequireComponent (typeof(Rigidbody2D))]
 [RequireComponent (typeof(Seeker))]
 public class SlimeAI : MonoBehaviour {
-    [SerializeField] private CharacterController2D myController;
-    [SerializeField] private CharacterController2D playerController;
+    private CharacterController2D myController;
+    private CharacterController2D playerController;
+    private Animator animator;
     [SerializeField] private Transform target;
     [SerializeField] private float moveSpeed = 40f;
     [SerializeField] private float maxDistance = 2f;
+    [SerializeField] private bool fixLanding = false;
 
     float horizontalMove = 0f;
     int direction = 0;
@@ -28,7 +30,7 @@ public class SlimeAI : MonoBehaviour {
     private int currentWayPoint = 0;
 
     bool playerWasMoving = false;
-    bool shouldMove = false;
+    bool ignoreFirst = true;
 
     void Awake()
     {
@@ -42,12 +44,9 @@ public class SlimeAI : MonoBehaviour {
     void Start()
     {
         seeker = GetComponent<Seeker>();
-
-        // Generate an initial path
-        //seeker.StartPath(transform.position, target.position, OnPathComplete);
-
-        // Updates path
-        //StartCoroutine(UpdatePath ());
+        myController = GetComponent<CharacterController2D>();
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController2D>();
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -56,6 +55,9 @@ public class SlimeAI : MonoBehaviour {
         if (playerWasMoving && !playerController.IsMoving())
         {
             StartCoroutine(UpdatePath());
+
+            // Plays movement animation
+            animator.SetBool("IsMoving", true);
         }
 
         // If there's a path available to be followed
@@ -75,7 +77,7 @@ public class SlimeAI : MonoBehaviour {
                     direction = path.vectorPath[currentWayPoint].x > transform.position.x ? 1 : -1;
                     // Sets horizontal move to correct direction and speed
                     horizontalMove = direction * moveSpeed;
-                }                
+                }
 
                 // Actually moves
                 myController.Move(horizontalMove * Time.fixedDeltaTime, jump);
@@ -91,7 +93,11 @@ public class SlimeAI : MonoBehaviour {
 
                         if (yDifference > 0.5f)
                         {
-                            jump = true;                            
+                            // Plays jumping animation
+                            animator.SetBool("IsJumping", true);
+                            
+                            jump = true;
+                            ignoreFirst = fixLanding;
                         }
                     }
                 }
@@ -99,6 +105,9 @@ public class SlimeAI : MonoBehaviour {
             // Just reached the end of path
             else if (currentWayPoint == path.vectorPath.Count)
             {
+                // Stops movement animation
+                animator.SetBool("IsMoving", false);
+
                 pathIsEnded = true;
                 currentWayPoint++;
                 StopAllCoroutines();
@@ -140,5 +149,16 @@ public class SlimeAI : MonoBehaviour {
     {
         // load a new scene
         Debug.Log("Ouch!");
+    }
+
+    public void OnLanding()
+    {
+        if (ignoreFirst)
+            ignoreFirst = false;
+        else
+        {
+            // Plays landing animation
+            animator.SetBool("IsJumping", false);
+        }
     }
 }
