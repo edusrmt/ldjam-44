@@ -33,8 +33,9 @@ public class SlimeAI : MonoBehaviour {
     void Awake()
     {
         // Do not collide with player
-        Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), playerController.GetComponent<CircleCollider2D>());
-        Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), playerController.GetComponent<BoxCollider2D>());
+        Physics2D.IgnoreLayerCollision(8, 9);
+        // Do not collide with other slimes
+        Physics2D.IgnoreLayerCollision(9, 9);
     }
 
     // Start is called before the first frame update
@@ -132,5 +133,12 @@ public class SlimeAI : MonoBehaviour {
 
         // Calls itself again
         StartCoroutine(UpdatePath());
+    }
+
+    // When clicked by player
+    void OnMouseDown ()
+    {
+        // load a new scene
+        Debug.Log("Ouch!");
     }
 }
