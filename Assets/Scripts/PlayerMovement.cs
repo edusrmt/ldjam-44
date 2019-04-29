@@ -44,4 +44,18 @@ public class PlayerMovement : MonoBehaviour {
             animator.SetBool("IsJumping", false);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Thorns")
+        {
+            animator.SetBool("IsAlive", false);
+            Invoke("Die", 1f / 3f);
+        }
+    }
+
+    void Die ()
+    {
+        GameManager.instance.StartGame();
+    }
 }

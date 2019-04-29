@@ -14,6 +14,7 @@ public class SlimeAI : MonoBehaviour {
     [SerializeField] private float moveSpeed = 40f;
     [SerializeField] private float maxDistance = 2f;
     [SerializeField] private bool fixLanding = false;
+    [SerializeField] GameObject deadPrefab;
 
     float horizontalMove = 0f;
     int direction = 0;
@@ -127,7 +128,10 @@ public class SlimeAI : MonoBehaviour {
                 {
                     Destroy(target.gameObject);
                     target = GameObject.FindGameObjectWithTag("Player").transform;
-                    underControl = GameManager.instance.CatchSlime(gameObject);
+
+                    if (!underControl)                        
+                        underControl = GameManager.instance.CatchSlime(gameObject);
+
                     catchingBerry = false;
                 }
             }
@@ -192,6 +196,10 @@ public class SlimeAI : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Thorns")
-            Debug.Log("Ouch!");
+        {
+            GameObject corpse = Instantiate(deadPrefab, transform.position, Quaternion.identity);
+            GameManager.instance.FreeSlime(gameObject);
+            Destroy(gameObject);
+        }
     }
 }

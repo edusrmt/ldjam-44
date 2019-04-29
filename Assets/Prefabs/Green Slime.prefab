@@ -205,6 +205,8 @@ MonoBehaviour:
   moveSpeed: 40
   maxDistance: 0.1
   fixLanding: 1
+  deadPrefab: {fileID: 1182495405209910640, guid: c3f36512f1720f742a99c8e35fe9f74a,
+    type: 3}
   updateRate: 2
   pathIsEnded: 0
   nextWaypointDistance: 1

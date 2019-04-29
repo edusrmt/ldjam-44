@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject berryPrefab;
     [SerializeField] int maxSlimesOwned = 4;
     [SerializeField] LayerMask whatIsSlime = new LayerMask();
-    List<GameObject> slimesOwnedList = new List<GameObject>(4);
+    GameObject[] slimesOwnedList = new GameObject[4];
     GameObject playerObject;
     public static GameManager instance = null;
 
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
-
+        
         playerObject = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -87,9 +87,9 @@ public class GameManager : MonoBehaviour
     {
         if (slimesOwned < maxSlimesOwned)
         {
-            slimesOwnedList.Add(newSlime);
-            int index = slimesOwnedList.Count - 1;
-            newSlime.GetComponent<SlimeAI>().SetTarget(playerObject.transform.GetChild(index));
+            slimesOwnedList[slimesOwned] = newSlime;
+            newSlime.GetComponent<SlimeAI>().SetTarget(playerObject.transform.GetChild(slimesOwned));
+            slimesOwned++;
             return true;
         } else
         {
@@ -105,5 +105,23 @@ public class GameManager : MonoBehaviour
     public void QuitGame ()
     {
         Application.Quit();
+    }
+
+    public void FreeSlime (GameObject slime)
+    {
+        for (int i = 0; i < maxSlimesOwned; i++)
+        {
+            if(slimesOwnedList[i] == slime)
+            {
+                for (int j = i + 1; j < maxSlimesOwned; j++)
+                {
+                    slimesOwnedList[j - 1] = slimesOwnedList[j];
+                }
+                
+                break;
+            }
+        }
+
+        slimesOwned--;
     }
 }

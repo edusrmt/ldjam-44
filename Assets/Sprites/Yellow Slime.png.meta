@@ -1,76 +1,76 @@
 fileFormatVersion: 2
-guid: b0a3a527b5081f94fa95c14bd1b8d015
+guid: 28040524878ab5047a9edc6322981739
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5346023277746062881
-    second: Yellow Slime_0
+      213: -6208960221296572836
+    second: Slime_Yellow_0
   - first:
-      213: -6478673221943021530
-    second: Yellow Slime_1
+      213: -2523413533887305914
+    second: Slime_Yellow_1
   - first:
-      213: 279305339804987062
-    second: Yellow Slime_2
+      213: -4292515130265875245
+    second: Slime_Yellow_2
   - first:
-      213: 4058924205936208227
-    second: Yellow Slime_3
+      213: 1031323803513023949
+    second: Slime_Yellow_3
   - first:
-      213: -5989361242807985917
-    second: Yellow Slime_4
+      213: 4725359267382342225
+    second: Slime_Yellow_4
   - first:
-      213: 6716882440037797031
-    second: Yellow Slime_5
+      213: -6119682263412453045
+    second: Slime_Yellow_5
   - first:
-      213: 3266673994425185116
-    second: Yellow Slime_6
+      213: -8207903460055800764
+    second: Slime_Yellow_6
   - first:
-      213: 3488312837653854515
-    second: Yellow Slime_7
+      213: 8279742768868862191
+    second: Slime_Yellow_7
   - first:
-      213: -7820002957816614739
-    second: Yellow Slime_8
+      213: 804984582413611269
+    second: Slime_Yellow_8
   - first:
-      213: -8776923263056157407
-    second: Yellow Slime_9
+      213: 4296079533635848083
+    second: Slime_Yellow_9
   - first:
-      213: 2303978997108453086
-    second: Yellow Slime_10
+      213: 6767176078569952333
+    second: Slime_Yellow_10
   - first:
-      213: 9186733651055902221
-    second: Yellow Slime_11
+      213: 940446209875501400
+    second: Slime_Yellow_11
   - first:
-      213: -7791732300011367386
-    second: Yellow Slime_12
+      213: 5537225023344031741
+    second: Slime_Yellow_12
   - first:
-      213: -720794590950448602
-    second: Yellow Slime_13
+      213: -3006429797849255778
+    second: Slime_Yellow_13
   - first:
-      213: -1360608290982548796
-    second: Yellow Slime_14
+      213: -8286442941468313232
+    second: Slime_Yellow_14
   - first:
-      213: 5275893044229690474
-    second: Yellow Slime_15
+      213: 7444868990674152409
+    second: Slime_Yellow_15
   - first:
-      213: -578182424219868084
-    second: Yellow Slime_16
+      213: 5195787469750901107
+    second: Slime_Yellow_16
   - first:
-      213: 897934729171216951
-    second: Yellow Slime_17
+      213: 5569862961178417664
+    second: Slime_Yellow_17
   - first:
-      213: 169956706039026684
-    second: Yellow Slime_18
+      213: -8012218849886241466
+    second: Slime_Yellow_18
   - first:
-      213: -6540485528473931324
-    second: Yellow Slime_19
+      213: -4315531341414783252
+    second: Slime_Yellow_19
   - first:
-      213: -3676479459348150487
-    second: Yellow Slime_20
+      213: -2571410765646655924
+    second: Slime_Yellow_20
   - first:
-      213: -5758819711611609967
-    second: Yellow Slime_21
+      213: 3938462974917325496
+    second: Slime_Yellow_21
   - first:
-      213: -5670673242483150324
-    second: Yellow Slime_22
+      213: -6313133143842961698
+    second: Slime_Yellow_22
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -164,7 +164,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Yellow Slime_0
+      name: Slime_Yellow_0
       rect:
         serializedVersion: 2
         x: 0
@@ -178,14 +178,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d4270e13c08a4b46a1f9426e9dc076c
-      internalID: -5346023277746062881
+      spriteID: cfc8f80ab6cd44b4fa307c536f10f757
+      internalID: -6208960221296572836
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_1
+      name: Slime_Yellow_1
       rect:
         serializedVersion: 2
         x: 16
@@ -199,14 +199,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bcffa76ed8a07f46b807f9ebe2cce46
-      internalID: -6478673221943021530
+      spriteID: 67c604c34a951ff4a94bbc3c9c3bb3ad
+      internalID: -2523413533887305914
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_2
+      name: Slime_Yellow_2
       rect:
         serializedVersion: 2
         x: 32
@@ -220,14 +220,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4524dfa63fb1a0f4bae764daa6023e33
-      internalID: 279305339804987062
+      spriteID: bfc3e48117086b541a9bc2b7dc2d4bf2
+      internalID: -4292515130265875245
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_3
+      name: Slime_Yellow_3
       rect:
         serializedVersion: 2
         x: 64
@@ -241,14 +241,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ca8dc289fbe4724db9eeb5998ae14ea
-      internalID: 4058924205936208227
+      spriteID: 8007e3ad78a147544846832ece39d785
+      internalID: 1031323803513023949
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_4
+      name: Slime_Yellow_4
       rect:
         serializedVersion: 2
         x: 0
@@ -262,14 +262,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e80b8e944b449b54d9408eeaec32d0c8
-      internalID: -5989361242807985917
+      spriteID: 9d73c762d846ca7498fed84248fb2fb9
+      internalID: 4725359267382342225
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_5
+      name: Slime_Yellow_5
       rect:
         serializedVersion: 2
         x: 16
@@ -283,14 +283,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95dc724ed0c75e24b9da6ce81c727981
-      internalID: 6716882440037797031
+      spriteID: ca75fc7b05042df46b5b75f4a61771ec
+      internalID: -6119682263412453045
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_6
+      name: Slime_Yellow_6
       rect:
         serializedVersion: 2
         x: 32
@@ -304,14 +304,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 761e251020a5db144aaf365ba5f3db2b
-      internalID: 3266673994425185116
+      spriteID: 9d752e094ff2b0a4abee72680d5f1bf0
+      internalID: -8207903460055800764
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_7
+      name: Slime_Yellow_7
       rect:
         serializedVersion: 2
         x: 64
@@ -325,14 +325,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 621485126a6fbf144a7d7b51544aef38
-      internalID: 3488312837653854515
+      spriteID: 34ee6c647a7d96144aa6cc559bf05676
+      internalID: 8279742768868862191
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_8
+      name: Slime_Yellow_8
       rect:
         serializedVersion: 2
         x: 0
@@ -346,14 +346,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 766b3bc83dd7cef4eae07d1f47ca9afa
-      internalID: -7820002957816614739
+      spriteID: 752b41dd7a9de4846a786b24345b7716
+      internalID: 804984582413611269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_9
+      name: Slime_Yellow_9
       rect:
         serializedVersion: 2
         x: 16
@@ -367,14 +367,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4f573cfd43785243b4555c8ca59e1cb
-      internalID: -8776923263056157407
+      spriteID: bdbf61c42673cd54ea5db057a5795904
+      internalID: 4296079533635848083
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_10
+      name: Slime_Yellow_10
       rect:
         serializedVersion: 2
         x: 32
@@ -388,14 +388,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3742b0f2652e2a44954c787a9a32fac
-      internalID: 2303978997108453086
+      spriteID: f07b5062f4e7e7f47a193533d59ff7e4
+      internalID: 6767176078569952333
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_11
+      name: Slime_Yellow_11
       rect:
         serializedVersion: 2
         x: 48
@@ -409,14 +409,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7c3ecbde2253534daf2a93dbef1dfdb
-      internalID: 9186733651055902221
+      spriteID: e9c4e51dea41e56408c417fc444dbd3d
+      internalID: 940446209875501400
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_12
+      name: Slime_Yellow_12
       rect:
         serializedVersion: 2
         x: 64
@@ -430,14 +430,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edaeae228658acb4081cdbd54a54abff
-      internalID: -7791732300011367386
+      spriteID: be39dff40da2c95438839d00e0737e0f
+      internalID: 5537225023344031741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_13
+      name: Slime_Yellow_13
       rect:
         serializedVersion: 2
         x: 0
@@ -451,14 +451,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3388f6518f18c3e47af1e1755b4b82e7
-      internalID: -720794590950448602
+      spriteID: 43f991fb15e1a6a4cacf7d8ad7bc6703
+      internalID: -3006429797849255778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_14
+      name: Slime_Yellow_14
       rect:
         serializedVersion: 2
         x: 16
@@ -472,14 +472,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4076f70396604af48bf9199de74490dc
-      internalID: -1360608290982548796
+      spriteID: 04edb1c46e7fff64c81a23d64f445db6
+      internalID: -8286442941468313232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_15
+      name: Slime_Yellow_15
       rect:
         serializedVersion: 2
         x: 32
@@ -493,14 +493,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9136581dbcee60448bef6540a03ce22
-      internalID: 5275893044229690474
+      spriteID: e0083b6bb2fed4440869a00b3e6618da
+      internalID: 7444868990674152409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_16
+      name: Slime_Yellow_16
       rect:
         serializedVersion: 2
         x: 48
@@ -514,14 +514,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45a15f923c552d149bac851668a877ef
-      internalID: -578182424219868084
+      spriteID: 86b1f8f71cf6d6842bb79673e610253d
+      internalID: 5195787469750901107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_17
+      name: Slime_Yellow_17
       rect:
         serializedVersion: 2
         x: 64
@@ -535,14 +535,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 268f35eae80822e4db81c7316007ea28
-      internalID: 897934729171216951
+      spriteID: 4011db5d7bb438a41a9ee4061e61050f
+      internalID: 5569862961178417664
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_18
+      name: Slime_Yellow_18
       rect:
         serializedVersion: 2
         x: 0
@@ -556,14 +556,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61d5afcb04516e749b0d616bfad30ee1
-      internalID: 169956706039026684
+      spriteID: ef654b4b59a80654aa63f2bfd9ba0ccc
+      internalID: -8012218849886241466
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_19
+      name: Slime_Yellow_19
       rect:
         serializedVersion: 2
         x: 16
@@ -577,14 +577,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf531ce6beaf20845b905dcfe95ab926
-      internalID: -6540485528473931324
+      spriteID: 05ea04b06e294eb4b9333a427abe79bb
+      internalID: -4315531341414783252
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_20
+      name: Slime_Yellow_20
       rect:
         serializedVersion: 2
         x: 32
@@ -598,14 +598,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83657103293811643a30d3b65569d55f
-      internalID: -3676479459348150487
+      spriteID: a2359b1ae58a90e4c85427efecebccc7
+      internalID: -2571410765646655924
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_21
+      name: Slime_Yellow_21
       rect:
         serializedVersion: 2
         x: 48
@@ -619,14 +619,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9a4b26128ff7d544acb70ffaa659e73
-      internalID: -5758819711611609967
+      spriteID: 76078712096be5445856106969e93c20
+      internalID: 3938462974917325496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow Slime_22
+      name: Slime_Yellow_22
       rect:
         serializedVersion: 2
         x: 64
@@ -640,8 +640,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbc1a0fdfb2c6f24d844d504dd4e79fa
-      internalID: -5670673242483150324
+      spriteID: 2f16aa7192bdd434da0d16f8509ed2e9
+      internalID: -6313133143842961698
       vertices: []
       indices: 
       edges: []
@@ -649,7 +649,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 4ad92ee453097fa41aade6a0d361895b
+    spriteID: 2397396fbfba25a4097226a3f6b2f6cc
     internalID: 0
     vertices: []
     indices: 

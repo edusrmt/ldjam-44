@@ -92,8 +92,8 @@ GameObject:
   - component: {fileID: 6837109058022827578}
   - component: {fileID: 6837109058022827559}
   - component: {fileID: 6837109058022827556}
-  m_Layer: 0
-  m_Name: Zeca
+  m_Layer: 11
+  m_Name: Bush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
