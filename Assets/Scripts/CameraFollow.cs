@@ -7,12 +7,17 @@ public class CameraFollow : MonoBehaviour
     public Transform target;
 
     public float smoothSpeed = 10f;
-    public Vector3 offset = new Vector3(0, 0, -1);
+    float minX;
+
+    private void Start()
+    {
+        minX = transform.position.x;
+    }
 
     void FixedUpdate()
     {
-        Vector3 desiredPosition = target.position + offset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
-        transform.position = smoothedPosition;
+        float desiredX = Mathf.Lerp(transform.position.x, target.position.x, smoothSpeed * Time.fixedDeltaTime);
+        Vector3 nextPosition = new Vector3(desiredX < minX ? minX : desiredX, transform.position.y, -1);
+        transform.position = nextPosition;
     }
 }

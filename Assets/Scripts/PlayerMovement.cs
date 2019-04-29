@@ -22,6 +22,12 @@ public class PlayerMovement : MonoBehaviour {
             jump = true;
             ignoreFirst = true;
         }
+
+        if (Input.GetButtonDown("Throw"))
+        {
+            GameManager.instance.ThrowBerry();
+        }
+            
     }
 
     void FixedUpdate () {

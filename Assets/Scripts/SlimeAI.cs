@@ -5,6 +5,8 @@ using Pathfinding;
 [RequireComponent (typeof(Rigidbody2D))]
 [RequireComponent (typeof(Seeker))]
 public class SlimeAI : MonoBehaviour {
+    public bool underControl = false;
+
     private CharacterController2D myController;
     private CharacterController2D playerController;
     private Animator animator;
@@ -31,6 +33,7 @@ public class SlimeAI : MonoBehaviour {
 
     bool playerWasMoving = false;
     bool ignoreFirst = true;
+    bool catchingBerry = false;
 
     void Awake()
     {
@@ -50,6 +53,14 @@ public class SlimeAI : MonoBehaviour {
     }
 
     void FixedUpdate()
+    {
+        if(underControl || catchingBerry)
+        {
+            FollowTarget();
+        }
+    }
+
+    void FollowTarget ()
     {
         // Everytime the player stops moving, generate a new path to be followed
         if (playerWasMoving && !playerController.IsMoving())
@@ -95,7 +106,7 @@ public class SlimeAI : MonoBehaviour {
                         {
                             // Plays jumping animation
                             animator.SetBool("IsJumping", true);
-                            
+
                             jump = true;
                             ignoreFirst = fixLanding;
                         }
@@ -111,9 +122,17 @@ public class SlimeAI : MonoBehaviour {
                 pathIsEnded = true;
                 currentWayPoint++;
                 StopAllCoroutines();
+
+                if(catchingBerry)
+                {
+                    Destroy(target.gameObject);
+                    target = GameObject.FindGameObjectWithTag("Player").transform;
+                    underControl = GameManager.instance.CatchSlime(gameObject);
+                    catchingBerry = false;
+                }
             }
         }
-        
+
         playerWasMoving = playerController.IsMoving();
     }
 
@@ -144,13 +163,6 @@ public class SlimeAI : MonoBehaviour {
         StartCoroutine(UpdatePath());
     }
 
-    // When clicked by player
-    void OnMouseDown ()
-    {
-        // load a new scene
-        Debug.Log("Ouch!");
-    }
-
     public void OnLanding()
     {
         if (ignoreFirst)
@@ -160,5 +172,26 @@ public class SlimeAI : MonoBehaviour {
             // Plays landing animation
             animator.SetBool("IsJumping", false);
         }
+    }
+
+    public void SetTarget (Transform t)
+    {
+        target = t;
+    }
+
+    public void CatchBerry()
+    {
+        StartCoroutine(UpdatePath());
+
+        // Plays movement animation
+        animator.SetBool("IsMoving", true);
+
+        catchingBerry = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Thorns")
+            Debug.Log("Ouch!");
     }
 }
