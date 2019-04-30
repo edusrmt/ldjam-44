@@ -23,8 +23,6 @@ public class CharacterController2D : MonoBehaviour
     [System.Serializable]
     public class BoolEvent : UnityEvent<bool> { }
 
-    Vector3 m_lastPosition;
-
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -57,8 +55,6 @@ public class CharacterController2D : MonoBehaviour
 
 
     public void Move (float move, bool jump) {
-        m_lastPosition = transform.position;
-
         //only control the player if grounded or airControl is turned on
         if (m_Grounded || m_AirControl) {
             // Move the character by finding the target velocity
@@ -107,6 +103,6 @@ public class CharacterController2D : MonoBehaviour
 
     public bool IsMoving ()
     {
-        return transform.position != m_lastPosition;
+        return Input.GetAxisRaw("Horizontal") != 0f;
     }
 }

@@ -49,13 +49,13 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Thorns")
         {
-            animator.SetBool("IsAlive", false);
-            Invoke("Die", 1f / 3f);
+            Die();
         }
     }
 
     void Die ()
     {
-        GameManager.instance.StartGame();
+        animator.SetBool("IsAlive", false);
+        GameManager.instance.Invoke("StartGame", 1f / 3f);
     }
 }

@@ -13,8 +13,10 @@ public class SlimeAI : MonoBehaviour {
     [SerializeField] private Transform target;
     [SerializeField] private float moveSpeed = 40f;
     [SerializeField] private float maxDistance = 2f;
+    [SerializeField] private float farAway = 2f;
     [SerializeField] private bool fixLanding = false;
     [SerializeField] GameObject deadPrefab;
+    [SerializeField] float timeOut = 5;
 
     float horizontalMove = 0f;
     int direction = 0;
@@ -57,6 +59,7 @@ public class SlimeAI : MonoBehaviour {
     {
         if(underControl || catchingBerry)
         {
+            
             FollowTarget();
         }
     }
@@ -70,6 +73,8 @@ public class SlimeAI : MonoBehaviour {
 
             // Plays movement animation
             animator.SetBool("IsMoving", true);
+
+            StartCoroutine(Teleport());
         }
 
         // If there's a path available to be followed
@@ -126,12 +131,8 @@ public class SlimeAI : MonoBehaviour {
 
                 if(catchingBerry)
                 {
-                    Destroy(target.gameObject);
-                    target = GameObject.FindGameObjectWithTag("Player").transform;
-
-                    if (!underControl)                        
-                        underControl = GameManager.instance.CatchSlime(gameObject);
-
+                    Destroy(target.gameObject);                       
+                    underControl = GameManager.instance.CatchSlime(gameObject);
                     catchingBerry = false;
                 }
             }
@@ -183,8 +184,13 @@ public class SlimeAI : MonoBehaviour {
         target = t;
     }
 
-    public void CatchBerry()
+    public void CatchBerry(Transform berry)
     {
+        SetTarget(berry);
+
+        if (underControl)
+            GameManager.instance.FreeSlime(gameObject);
+
         StartCoroutine(UpdatePath());
 
         // Plays movement animation
@@ -200,6 +206,19 @@ public class SlimeAI : MonoBehaviour {
             GameObject corpse = Instantiate(deadPrefab, transform.position, Quaternion.identity);
             GameManager.instance.FreeSlime(gameObject);
             Destroy(gameObject);
+        }
+    }
+
+    IEnumerator Teleport ()
+    {
+        // Waits until it's time to run again
+        yield return new WaitForSeconds(timeOut);
+
+        Debug.Log("Timed out!");
+        if(Vector3.Distance(transform.position, target.position) > farAway)
+        {
+            transform.position = target.position;
+            animator.SetBool("IsJumping", false);
         }
     }
 }

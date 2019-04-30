@@ -74,8 +74,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: -5346023277746062881, guid: b0a3a527b5081f94fa95c14bd1b8d015,
+  m_SortingOrder: 4
+  m_Sprite: {fileID: -6208960221296572836, guid: 28040524878ab5047a9edc6322981739,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -100,9 +100,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.05}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.55
+  m_Radius: 0.4
 --- !u!50 &9145360883807148583
 Rigidbody2D:
   serializedVersion: 4
@@ -204,7 +204,11 @@ MonoBehaviour:
   target: {fileID: 0}
   moveSpeed: 40
   maxDistance: 0.1
+  farAway: 2
   fixLanding: 1
+  deadPrefab: {fileID: 1182495405209910640, guid: c3f36512f1720f742a99c8e35fe9f74a,
+    type: 3}
+  timeOut: 5
   updateRate: 2
   pathIsEnded: 0
   nextWaypointDistance: 1

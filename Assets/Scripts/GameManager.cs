@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
             berry.name = "Berry";
             berryCount--;
 
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(berry.transform.position, 10, whatIsSlime);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(berry.transform.position, 15, whatIsSlime);
 
             if (colliders.Length > 0)
             {
@@ -77,8 +77,7 @@ public class GameManager : MonoBehaviour
                     }
                 }
 
-                bestOption.SetTarget(berry.transform);
-                bestOption.CatchBerry();
+                bestOption.CatchBerry(berry.transform);
             }
         }
     }
@@ -123,5 +122,11 @@ public class GameManager : MonoBehaviour
         }
 
         slimesOwned--;
+    }
+
+
+    public void EndGame ()
+    {
+        SceneManager.LoadScene(0);
     }
 }
